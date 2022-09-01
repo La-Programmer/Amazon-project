@@ -2,12 +2,12 @@ import './App.css';
 import Header from './Header'
 import Home from './Home';
 import Checkout from './Checkout'
-// import Login from './Login'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import React, { useEffect } from 'react';
 import Login from './Login';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
+import Payment from './Payment';
 
 function App() {
 
@@ -43,6 +43,7 @@ function App() {
         <Routes>
           <Route path="/checkout" element={<><Header /><Checkout /></>}></Route>
           <Route path="/login" element={[<Login />]}></Route>
+          <Route path="/payment" element={<><Header /><Payment /></>}></Route>
       {/* MAKE SURE YOUR DEFAULT ROUTE I.E; HOME PAGE IS AT THE BOTTOM */} 
           <Route path="/" element={<><Header /><Home /></>}></Route>
         </Routes>

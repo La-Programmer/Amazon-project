@@ -1,6 +1,7 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from "./StateProvider"
+import Boop from './Boop'
 
 function Product({id, title, image, price, rating}) {
 
@@ -20,8 +21,22 @@ function Product({id, title, image, price, rating}) {
         });
     };
 
+    const style = {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            margin: '20px',
+            padding: '20px',
+            width: '100%',
+            maxHeight: '400px',
+            backgroundColor: 'white', 
+            zIndex: '1'
+    }
+
     return (
-        <div className='product'>
+        <Boop style={style} scale={1.025} timing={500}>
+            <div style={style}className='product'>
             <div className="product__info">
                 <p>{title}</p>
                 <p className="product__price">
@@ -40,6 +55,7 @@ function Product({id, title, image, price, rating}) {
                 Add to Basket
             </button>
         </div>
+        </Boop>
     )
 }
 
