@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 import Product from './Product'
 
-import  { animated, useTransition }  from 'react-spring'
+
 import { useState } from 'react'
 
 function Home() {
@@ -10,20 +10,6 @@ function Home() {
   const [index, setIndex] = useState(0);
 
   const images = ['https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FkZ2V0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60', 'https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg', 'https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGdhZGdldHN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60']
-
-  const transitions = useTransition(index, {
-    from: {opacity: 0},
-    enter: {opacity: 1},
-    leave: {opacity: 0},
-    delay: 5000,
-    config: {duration: 2000},
-    onRest: (a, b, item) => {
-      if (item === index) {
-        setIndex(ind => (ind + 1) % images.length)
-      }
-    }
-
-  })
 
   
   return (

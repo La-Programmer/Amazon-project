@@ -2,6 +2,7 @@ import React from 'react'
 import CheckoutProduct from './CheckoutProduct';
 import './Payment.css'
 import { useStateValue } from './StateProvider'
+import { Flipper, Flipped } from 'react-flip-toolkit'
 
 function Payment() {
     // eslint-disable-next-line no-unused-vars
@@ -20,6 +21,7 @@ function Payment() {
 
                 <div className="payment__address">
                     <p>{user?.email}</p>
+                    {/* ASK FOR USER ADDRESS IN THE FORM AND RENDER IT HERE */}
                     <p>123 React Lane</p>
                     <p>Los Angeles, CA</p>
                 </div>
@@ -31,17 +33,21 @@ function Payment() {
                     <h3>Review Items and Delivery</h3>
                 </div>
 
-                <div className="payment__items">
+                <Flipper flipKey={basket} className="payment__items">
                     {basket.map(item => (
-                        <CheckoutProduct 
-                            id={item.id}
-                            image={item.image}
-                            title={item.title}
-                            price={item.price}
-                            rating={item.rating}
-                        />
+                        <Flipped key={item.id} flipId={item.id}>
+                        { flippedProps => <CheckoutProduct
+                        id={item.id}
+                        image={item.image}
+                        title={item.title}
+                        price={item.price}
+                        rating={item.rating}
+                        key={item.title}
+                        flippedProps={flippedProps}
+                    />}
+                    </Flipped>
                     ))}
-                </div>
+                </Flipper>
             </div>
 
             <div className="payment__section">

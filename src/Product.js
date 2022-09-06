@@ -2,6 +2,7 @@ import React from 'react'
 import './Product.css'
 import { useStateValue } from "./StateProvider"
 import Boop from './Boop'
+import { useMediaQuery } from '@mui/material';
 
 function Product({id, title, image, price, rating}) {
 
@@ -21,7 +22,17 @@ function Product({id, title, image, price, rating}) {
         });
     };
 
-    const style = {
+    const style = {};
+
+    const st = {};
+
+    const st1 = {
+        margin: '2rem 13%',
+        width: '70%',
+        maxHeight: 'auto',
+    }
+
+    const style1 = {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -34,8 +45,38 @@ function Product({id, title, image, price, rating}) {
             zIndex: '1'
     }
 
+    const style2 = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '2rem',
+        width: '79%',
+        maxHeight: '400px',
+        backgroundColor: 'white', 
+        zIndex: '1'
+}
+
+    const matches = useMediaQuery( '(max-width: 768px)')
+
+    if (matches === true) {
+        for (const item in style2) {
+            style[item] = style2[item];
+        }
+        for (const item in st1) {
+            st[item] = st1[item];
+        }
+
+    } else {
+        for (const item in style1) {
+            style[item] = style1[item];
+            st[item] = style1[item];
+        }
+    }
+
+    console.log(matches)
+
     return (
-        <Boop style={style} scale={1.025} timing={500}>
+        <Boop style={st} scale={1.025} timing={500}>
             <div style={style}className='product'>
             <div className="product__info">
                 <p>{title}</p>

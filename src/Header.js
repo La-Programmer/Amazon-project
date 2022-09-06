@@ -11,6 +11,7 @@ function Header() {
     // eslint-disable-next-line no-unused-vars
     const [{ basket, user }, dispatch] = useStateValue();
 
+
     return (
         <div className='header'>
             <Link to="/">

@@ -4,7 +4,7 @@ import { useStateValue } from './StateProvider';
 
 
 // eslint-disable-next-line no-undef
-export default function CheckoutProduct({ id, image, title, price, rating, ref })  {
+export default function CheckoutProduct({ id, image, title, price, rating, flippedProps})  {
 
     // eslint-disable-next-line no-unused-vars
     const [{ basket }, dispatch] = useStateValue();
@@ -18,7 +18,7 @@ export default function CheckoutProduct({ id, image, title, price, rating, ref }
     };
 
     return (
-        <div className='checkoutProduct' ref={ref}>
+        <div className='checkoutProduct' {...flippedProps}>
             <img className="checkoutProduct__image" src={image} alt="" />
             <div className="checkoutProduct__info">
                 <p className='checkoutProduct__title'>
