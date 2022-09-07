@@ -14,12 +14,12 @@
     margin-bottom: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
-    transition: scale 0.4s, background-color 0.4s;
+    transition: color 0.4s, background-color 0.4s;
 }
 
 .product > button:hover {
-    background-color: #e0b03a;
-    scale: 1.03;
+    background-color: #111;
+    color: #f0c14b;
 }
 
 .product > img {

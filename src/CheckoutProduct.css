@@ -1,6 +1,7 @@
 .checkoutProduct {
     display: flex;
-    margin: 20px 0;
+    margin: 1rem ;
+    padding: 1rem;
     background-color: white;
     align-items: flex-start;
 }
@@ -14,16 +15,18 @@
     padding-left: 10px;
 }
 
-.checkoutProduct__title {
-    width: 250px;
-}
-
 .checkoutProduct > .checkoutProduct__info > button {
     background: #f0c14b;
     border: 1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    transition: color 0.4s, background-color 0.4s;
+}
+
+.checkoutProduct > .checkoutProduct__info > button:hover {
+    background-color: #111;
+    color: #f0c14b;
 }
 
 .checkoutProduct__rating{

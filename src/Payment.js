@@ -33,7 +33,7 @@ function Payment() {
                     <h3>Review Items and Delivery</h3>
                 </div>
 
-                <Flipper flipKey={basket} className="payment__items">
+                <Flipper flipKey={basket} className="payment__items" spring='gentle'>
                     {basket.map(item => (
                         <Flipped key={item.id} flipId={item.id}>
                         { flippedProps => <CheckoutProduct

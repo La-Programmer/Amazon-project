@@ -78,5 +78,14 @@ a {
 @media only screen and (max-width: 768px) {
     .header {
         height: 100px;
+        width: 100%;
+    }
+
+    .header__logo {
+        margin: 0rem 0.6rem;
+    }
+
+    .header__optionBasket {
+        flex-direction: column-reverse;
     }
 }   

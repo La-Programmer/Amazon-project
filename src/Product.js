@@ -84,7 +84,6 @@ function Product({id, title, image, price, rating}) {
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
- 
                 <div className="product__rating">
                     {Array(rating).fill(<span>&#11088;</span>)}
                 </div>

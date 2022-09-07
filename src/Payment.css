@@ -1,5 +1,5 @@
 .payment {
-    background-color: white;
+    background-color: rgb(240, 240, 240);
 }
 
 .payment__container > h1 {
@@ -22,4 +22,10 @@
 
 .payment__address, .payment__items   {
     flex: 0.8;
+}
+
+@media only screen and (max-width: 768px) {
+    .payment__section {
+        flex-direction: column;
+    }
 }
