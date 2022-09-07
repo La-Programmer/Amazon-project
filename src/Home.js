@@ -27,19 +27,22 @@ function Home() {
   return (
     <div className='home'>
         <div className='home__container'>
-        {/* {transition((style,index) =>(
+        {transition((style,index) =>(
           <animated.div style = {{...style,
-            width: '80%',
+            width: '100%',
+            maxWidth: '1000px',
+            marginLeft: 'auto',
+            marginRight:'auto',
             zIndex: '-1',
             marginBottom: '-150px',
             position: 'absolute',
             maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))'
           }}> 
-            <img src={images[index]} alt=''/>
+            <img src={images[index]} alt='' className='home__image'/>
           </animated.div> 
-        ))} */}
+        ))}
 
-          <img src={images[1]} alt='' className='home__image'/>
+          {/* <img src={images[1]} alt='' className='home__image'/> */}
 
           <div className='home__row'>
             <Product id={randomInt(0, 1)}
