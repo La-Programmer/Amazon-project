@@ -23,7 +23,7 @@ function Checkout() {
                     </h2>
 
                         {basket.map((item) => (
-                            <Flipped key={item.id} flipId={item.id}>
+                            <Flipped key={item.id} flipId='item'>
                                 { flippedProps => <CheckoutProduct
                                 id={item.id}
                                 image={item.image}
